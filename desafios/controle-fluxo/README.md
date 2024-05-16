@@ -20,14 +20,14 @@ O sistema deverá receber dois parâmetros via terminal que representarão dois 
 
 Abaixo temos um trecho de código no qual você poderá seguir alterando as partes que contenham `??`
 
-```java
+````java
 public class Contador {
 	public static void main(String[] args) {
 		Scanner terminal = new Scanner(System.in);
 		System.out.println("Digite o primeiro parâmetro");
-		int parametroUm = terminal.??;
+		int parametroUm = terminal.NextInt();
 		System.out.println("Digite o segundo parâmetro");
-		int parametroDois = terminal.??;
+		int parametroDois = terminal.NextInt();
 		
 		try {
 			//chamando o método contendo a lógica de contagem
@@ -35,12 +35,19 @@ public class Contador {
 		
 		}catch (? exception) {
 			//imprimir a mensagem: O segundo parâmetro deve ser maior que o primeiro
+			System.out.println("o segundo parâmetro deve ser maior que o primeiro parâmetro.");
 		}
 		
 	}
 	static void contar(int parametroUm, int parametroDois ) throws ParametrosInvalidosException {
 		//validar se parametroUm é MAIOR que parametroDois e lançar a exceção
-		
+		if(parametroUm > parametroDois) {
+			System.out.println("O primeiro parâmetro é maior que o segundo parâmetro.");
+		}
+		else {
+			System.out.println("o segundo parâmetro é maior que o primeiro parâmetro nesse momento");
+		}
+
 		int contagem = parametroDois - parametroUm;
 		//realizar o for para imprimir os números com base na variável contagem
 	}
